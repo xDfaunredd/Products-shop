@@ -20,7 +20,7 @@ const CartItem = ({ item }) => {
       <img src={item.thumbnail} alt="" />
       <p> {item.title}</p>
       <p>
-        ${item.price}x{item.count} = {item.count * item.price}
+        ${item.price} x {item.count} = ${item.count * item.price}
       </p>
       <div>
         <button onClick={decreaseCount}>-</button>
