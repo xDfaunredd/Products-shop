@@ -19,7 +19,9 @@ const CartItem = ({ item }) => {
     <li key={item.id}>
       <img src={item.thumbnail} alt="" />
       <p> {item.title}</p>
-      <p>${item.count * item.price}</p>
+      <p>
+        ${item.price}x{item.count} = {item.count * item.price}
+      </p>
       <div>
         <button onClick={decreaseCount}>-</button>
         <p>{item.count} </p>
