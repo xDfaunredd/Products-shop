@@ -19,19 +19,12 @@
   border-radius: 5px;
   padding: 5px;
 }
-.title {
-}
-
-.price {
-}
 
 .button {
   border: none;
   background-color: transparent;
 }
 
-.countValue {
-}
 .deleteButton {
   border: none;
   background-color: rgba(27, 27, 116, 0.706);
