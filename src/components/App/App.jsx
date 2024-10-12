@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "../../pages/Home/Home";
+import { lazy, Suspense, useEffect } from "react";
 import Header from "../Header/Header";
-import Cart from "../../pages/Cart/Cart";
-import { useEffect } from "react";
+
+const Home = lazy(() => import("../../pages/Home/Home"));
+const Cart = lazy(() => import("../../pages/Cart/Cart"));
+const ProductDetails = lazy(() => import("../ProductDetails/ProductDetails"));
+
 import { useDispatch } from "react-redux";
 import { fetchData } from "../../redux/productsOps";
-import ProductDetails from "../ProductDetails/ProductDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,11 +20,13 @@ function App() {
     <>
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-      </Routes>
+      <Suspense fallback={<h2>...Loading</h2>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }

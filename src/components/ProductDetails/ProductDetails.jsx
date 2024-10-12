@@ -5,15 +5,18 @@ import { getFullProductInfo } from "../../redux/productsOps";
 import { selectCurrentProduct } from "../../redux/selectors";
 import { addCart } from "../../redux/cartOps";
 
+import s from "./ProductDetails.module.css";
+
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const location = useLocation();
+
   useEffect(() => {
     dispatch(getFullProductInfo(id));
   }, [dispatch, id]);
-  const location = useLocation();
-  const goTo = location.state ?? "/";
 
+  const goTo = location.state ?? "/";
   const item = useSelector(selectCurrentProduct);
 
   const handleClick = () => {
@@ -21,21 +24,25 @@ const ProductDetails = () => {
   };
 
   return (
-    <div>
-      <Link to={goTo}> GO BACK TO PRODUCTS</Link>
+    <div className="container section">
+      <Link to={goTo} className={s.link}>
+        GO BACK TO PRODUCTS
+      </Link>
 
-      <img src={item?.thumbnail} alt={item?.title} />
-      <div>
-        <h2>{item?.title}</h2>
-        <p>${item?.price}</p>
+      <div className={s.containerDiv}>
+        <img src={item?.thumbnail} alt={item?.title} />
+        <div>
+          <h2 className={s.title}>{item?.title}</h2>
+          <p className={s.price}>${item?.price}</p>
 
-        <button onClick={handleClick} type="button">
-          Add to cart
-        </button>
-        <h3>
-          Return policy:
-          {item?.returnPolicy}
-        </h3>
+          <button className={s.button} onClick={handleClick} type="button">
+            Add to cart
+          </button>
+          <h3 className={s.policy}>
+            Return policy:
+            {item?.returnPolicy}
+          </h3>
+        </div>
       </div>
     </div>
   );

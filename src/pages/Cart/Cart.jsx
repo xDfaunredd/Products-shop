@@ -8,18 +8,21 @@ import { selectAmount } from "../../redux/selectors";
 const Cart = () => {
   const dispatch = useDispatch();
   const totalAmount = useSelector(selectAmount);
-  console.log(totalAmount);
 
   useEffect(() => {
     dispatch(fetchCart());
   }, [dispatch]);
 
   return (
-    <div>
-      <h2>Cart:</h2>
-      <p>Total sum: ${totalAmount.toFixed(2)} </p>
-      <CartList />
-    </div>
+    <section className="section">
+      <div className="container">
+        <div>
+          <h2>Cart:</h2>
+          <p>Total sum: ${totalAmount.toFixed(2)} </p>
+          <CartList />
+        </div>
+      </div>
+    </section>
   );
 };
 

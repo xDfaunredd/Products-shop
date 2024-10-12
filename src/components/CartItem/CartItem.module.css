@@ -1,0 +1,41 @@
+.item {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-auto-columns: minmax(100px, 200px);
+  justify-items: center;
+  gap: 20px;
+}
+.image {
+  max-width: 100px;
+}
+.countContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+}
+.title {
+}
+
+.price {
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+}
+
+.countValue {
+}
+.deleteButton {
+  border: none;
+  background-color: rgba(27, 27, 116, 0.706);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}

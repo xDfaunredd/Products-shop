@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { decrease, deleteCart, increase } from "../../redux/cartOps";
+import s from "./CartItem.module.css";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -16,18 +17,24 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <li key={item.id}>
-      <img src={item.thumbnail} alt="" />
-      <p> {item.title}</p>
-      <p>
+    <li key={item.id} className={s.item}>
+      <img src={item.thumbnail} alt="" className={s.image} />
+      <p className={s.title}> {item.title}</p>
+      <p className={s.price}>
         ${item.price} x {item.count} = ${item.count * item.price}
       </p>
-      <div>
-        <button onClick={decreaseCount}>-</button>
-        <p>{item.count} </p>
-        <button onClick={increaseCount}>+</button>
+      <div className={s.countContainer}>
+        <button className={s.button} onClick={decreaseCount}>
+          -
+        </button>
+        <p className={s.countValue}>{item.count} </p>
+        <button className={s.button} onClick={increaseCount}>
+          +
+        </button>
       </div>
-      <button onClick={handleDelete}>delete</button>
+      <button className={s.deleteButton} onClick={handleDelete}>
+        delete
+      </button>
     </li>
   );
 };

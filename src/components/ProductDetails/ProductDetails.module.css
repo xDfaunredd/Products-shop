@@ -1,0 +1,40 @@
+.containerDiv {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+}
+
+.link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 28px;
+  color: #175da8;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #175da8;
+  color: #fff;
+}
+
+.policy {
+  font-size: 14px;
+  font-weight: 400;
+  color: #291212c9;
+  line-height: 1.5;
+  margin-top: 20px;
+  text-align: justify;
+}
