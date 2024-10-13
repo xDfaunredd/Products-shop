@@ -6,6 +6,7 @@ import { selectCurrentProduct } from "../../redux/selectors";
 import { addCart } from "../../redux/cartOps";
 
 import s from "./ProductDetails.module.css";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const ProductDetails = () => {
 
   const handleClick = () => {
     dispatch(addCart(item));
+    toast.success("Successfully added!");
   };
 
   return (
