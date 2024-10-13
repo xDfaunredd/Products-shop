@@ -1,19 +1,24 @@
 import { FaBacterium, FaShoppingBag } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
+import clsx from "clsx";
+
+const setActive = ({ isActive }) => {
+  return clsx(s.link, isActive && s.active);
+};
 
 const Header = () => {
   return (
     <header className={s.header}>
       <div className="container">
         <nav className={s.nav}>
-          <Link to="/" className={s.link}>
+          <NavLink to="/" className={setActive}>
             Home <FaBacterium className={s.icon} />
-          </Link>
+          </NavLink>
 
-          <Link to="/cart" className={s.link}>
+          <NavLink to="/cart" className={setActive}>
             Cart <FaShoppingBag className={s.icon} />
-          </Link>
+          </NavLink>
         </nav>
       </div>
     </header>
