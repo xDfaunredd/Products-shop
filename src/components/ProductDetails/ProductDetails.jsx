@@ -24,27 +24,29 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="container section">
-      <Link to={goTo} className={s.link}>
-        GO BACK TO PRODUCTS
-      </Link>
+    <section className=" section">
+      <div className="container">
+        <Link to={goTo} className={s.link}>
+          GO BACK TO PRODUCTS
+        </Link>
 
-      <div className={s.containerDiv}>
-        <img src={item?.thumbnail} alt={item?.title} />
-        <div>
-          <h2 className={s.title}>{item?.title}</h2>
-          <p className={s.price}>${item?.price}</p>
+        <div className={s.containerDiv}>
+          <img src={item?.thumbnail} alt={item?.title} />
+          <div>
+            <h2 className={s.title}>{item?.title}</h2>
+            <p className={s.price}>${item?.price}</p>
 
-          <button className={s.button} onClick={handleClick} type="button">
-            Add to cart
-          </button>
-          <h3 className={s.policy}>
-            Return policy:
-            {item?.returnPolicy}
-          </h3>
+            <button className={s.button} onClick={handleClick} type="button">
+              Add to cart
+            </button>
+            <h3 className={s.policy}>
+              Return policy:
+              {item?.returnPolicy}
+            </h3>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

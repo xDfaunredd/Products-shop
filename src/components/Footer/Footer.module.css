@@ -1,0 +1,25 @@
+.footer {
+  background-color: lightblue;
+  padding: 100px 50px 50px 50px;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: center;
+  font-size: 30px;
+}
+
+.linksList {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.copyrightText {
+  display: flex;
+  justify-content: center;
+}

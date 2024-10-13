@@ -51,3 +51,13 @@ img {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main,
+section {
+  flex: 1;
+}
